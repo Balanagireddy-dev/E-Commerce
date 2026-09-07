@@ -1,0 +1,33 @@
+[
+  {
+    "id": "off-001",
+    "title": "Flat 15% off on Dairy",
+    "description": "Get 15% off on milk, curd, paneer & butter. Fresh every morning.",
+    "discountPercent": 15,
+    "categoryId": "cat-dairy",
+    "bannerEmoji": "🥛"
+  },
+  {
+    "id": "off-002",
+    "title": "Grocery Combo Saver",
+    "description": "Save big on rice, dal & cooking oil when bought together.",
+    "discountPercent": 10,
+    "categoryId": "cat-rice-dal",
+    "bannerEmoji": "🌾"
+  },
+  {
+    "id": "off-003",
+    "title": "Snack Attack",
+    "description": "Flat 12% off on chips, namkeen & biscuits this week.",
+    "discountPercent": 12,
+    "categoryId": "cat-chips",
+    "bannerEmoji": "🍟"
+  },
+  {
+    "id": "off-004",
+    "title": "Free Delivery Above ₹500",
+    "description": "Shop for ₹500 or more and get free home delivery.",
+    "discountPercent": 0,
+    "bannerEmoji": "🚚"
+  }
+]

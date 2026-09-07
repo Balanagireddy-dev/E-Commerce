@@ -1,0 +1,22 @@
+[
+  { "id": "cat-biscuits", "slug": "biscuits-cookies", "name": "Biscuits & Cookies", "icon": "🍪", "colorFrom": "#f7d9a0", "colorTo": "#eeb15c" },
+  { "id": "cat-chips", "slug": "chips-namkeen", "name": "Chips & Namkeen", "icon": "🍟", "colorFrom": "#ffe08a", "colorTo": "#f5b942" },
+  { "id": "cat-chocolates", "slug": "chocolates", "name": "Chocolates", "icon": "🍫", "colorFrom": "#c9a27a", "colorTo": "#8a5a3b" },
+  { "id": "cat-dairy", "slug": "dairy", "name": "Milk & Dairy", "icon": "🥛", "colorFrom": "#e8f3ff", "colorTo": "#bcdcff" },
+  { "id": "cat-bakery", "slug": "bakery", "name": "Bread & Bakery", "icon": "🍞", "colorFrom": "#f6e2c3", "colorTo": "#e3b978" },
+  { "id": "cat-beverages", "slug": "cool-drinks", "name": "Cool Drinks", "icon": "🥤", "colorFrom": "#ffd0d0", "colorTo": "#ff8f8f" },
+  { "id": "cat-water", "slug": "water", "name": "Water Bottles", "icon": "💧", "colorFrom": "#dff3ff", "colorTo": "#a9e0ff" },
+  { "id": "cat-tea-coffee", "slug": "tea-coffee", "name": "Tea & Coffee", "icon": "☕", "colorFrom": "#e4c9a8", "colorTo": "#9c6b3e" },
+  { "id": "cat-rice-dal", "slug": "rice-dal", "name": "Rice & Dal", "icon": "🌾", "colorFrom": "#f0ecd6", "colorTo": "#d9cf9d" },
+  { "id": "cat-oils", "slug": "cooking-oils", "name": "Cooking Oils", "icon": "🫙", "colorFrom": "#fff2c2", "colorTo": "#f5d876" },
+  { "id": "cat-spices", "slug": "spices", "name": "Spices & Masala", "icon": "🌶️", "colorFrom": "#ffd6c2", "colorTo": "#ff9a63" },
+  { "id": "cat-snacks", "slug": "snacks", "name": "Snacks", "icon": "🥨", "colorFrom": "#f8e3b0", "colorTo": "#e8c05c" },
+  { "id": "cat-personal-care", "slug": "personal-care", "name": "Personal Care", "icon": "🧴", "colorFrom": "#e0f5ee", "colorTo": "#a6e6d1" },
+  { "id": "cat-household", "slug": "household", "name": "Household Items", "icon": "🧺", "colorFrom": "#e6e6f7", "colorTo": "#c3c3ee" },
+  { "id": "cat-atta-flours", "slug": "atta-flours", "name": "Atta & Flours", "icon": "🫓", "colorFrom": "#f5e6c8", "colorTo": "#dcbb7c" },
+  { "id": "cat-sugar-salt", "slug": "sugar-salt-jaggery", "name": "Sugar, Salt & Jaggery", "icon": "🧂", "colorFrom": "#fef9e7", "colorTo": "#f0dfa0" },
+  { "id": "cat-eggs", "slug": "eggs", "name": "Eggs", "icon": "🥚", "colorFrom": "#fff5e0", "colorTo": "#f5dba0" },
+  { "id": "cat-pooja", "slug": "pooja-festive", "name": "Pooja & Festive Items", "icon": "🪔", "colorFrom": "#ffe0cc", "colorTo": "#ffb066" },
+  { "id": "cat-baby-care", "slug": "baby-care", "name": "Baby Care", "icon": "🍼", "colorFrom": "#e0f0ff", "colorTo": "#a8d4ff" },
+  { "id": "cat-stationery", "slug": "stationery", "name": "Stationery & Others", "icon": "✏️", "colorFrom": "#e8e8f5", "colorTo": "#c5c5e8" }
+]
