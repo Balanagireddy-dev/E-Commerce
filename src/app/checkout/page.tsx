@@ -6,6 +6,7 @@ import { useCartItems } from "@/lib/hooks/useCartItems";
 import { CheckoutForm } from "@/components/order/CheckoutForm";
 import { CartSummary } from "@/components/cart/CartSummary";
 import { shopConfig } from "@/config/shop.config";
+import { getShopSettings } from "@/lib/data/settingsService";
 import { calculateDeliveryCharge } from "@/lib/utils/price";
 import { createOrder } from "@/lib/data/orderService";
 import { upsertCustomer } from "@/lib/data/customerService";
@@ -18,11 +19,12 @@ export default function CheckoutPage() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [ready, setReady] = useState(false);
+  const settings = getShopSettings();
 
   const deliveryCharge = calculateDeliveryCharge(
     subtotalInPaise,
-    shopConfig.deliveryChargeInPaise,
-    shopConfig.freeDeliveryThresholdInPaise
+    settings.deliveryChargeInPaise,
+    settings.freeDeliveryThresholdInPaise
   );
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import { MapPin, Phone, Clock } from "@/components/ui/icons";
 
 export function Footer() {
   return (
-    <footer className="mt-12 hidden bg-brand-800 md:block">
+    <footer className="mt-12 block bg-brand-800 pb-24 md:pb-0">
       <div className="mx-auto max-w-7xl px-6 py-10 grid gap-8 sm:grid-cols-3">
         <div>
           <h3 className="mb-2 text-lg font-bold text-white">{shopConfig.shortName}</h3>

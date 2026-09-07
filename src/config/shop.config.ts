@@ -6,7 +6,7 @@
  */
 export const shopConfig = {
   name: "Sri Venkateswara Kirana Store",
-  shortName: "B&S Kirana",
+  shortName: "B&S Stores",
   tagline: "Fresh groceries, delivered fast to your door",
   logoText: "B&S",
   address: "1-14, Main Bazaar Road, Narapureddy Palli, Andhra Pradesh 523315",
@@ -18,8 +18,7 @@ export const shopConfig = {
   currencySymbol: "₹",
 
   deliveryChargeInPaise: 3000, // ₹30
-  freeDeliveryThresholdInPaise: 18000, // ₹180
-  minimumOrderInPaise: 10000, // ₹100
+  freeDeliveryThresholdInPaise: 25000, // ₹250
 
   storeHours: "7:00 AM – 10:00 PM, all days",
   estimatedDeliveryMinutes: 20,

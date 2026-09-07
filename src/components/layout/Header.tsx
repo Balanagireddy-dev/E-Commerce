@@ -13,7 +13,7 @@ export function Header() {
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-600 text-sm text-white">
             {shopConfig.logoText}
           </span>
-          <span className="hidden text-base sm:inline">{shopConfig.shortName}</span>
+          <span className="hidden text-base text-brand-600 sm:inline">{shopConfig.shortName}</span>
         </Link>
 
         <div className="hidden flex-1 md:block">

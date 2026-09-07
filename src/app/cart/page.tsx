@@ -7,20 +7,19 @@ import { CartItem } from "@/components/cart/CartItem";
 import { CartSummary } from "@/components/cart/CartSummary";
 import { Button } from "@/components/ui/Button";
 import { ShoppingCart } from "@/components/ui/icons";
-import { shopConfig } from "@/config/shop.config";
-import { calculateDeliveryCharge, formatPrice } from "@/lib/utils/price";
+import { getShopSettings } from "@/lib/data/settingsService";
+import { calculateDeliveryCharge } from "@/lib/utils/price";
 
 export default function CartPage() {
   const { items, subtotalInPaise } = useCartItems();
   const router = useRouter();
+  const settings = getShopSettings();
 
   const deliveryCharge = calculateDeliveryCharge(
     subtotalInPaise,
-    shopConfig.deliveryChargeInPaise,
-    shopConfig.freeDeliveryThresholdInPaise
+    settings.deliveryChargeInPaise,
+    settings.freeDeliveryThresholdInPaise
   );
-
-  const belowMinimum = subtotalInPaise > 0 && subtotalInPaise < shopConfig.minimumOrderInPaise;
 
   if (items.length === 0) {
     return (
@@ -50,13 +49,7 @@ export default function CartPage() {
         <div className="w-full shrink-0 md:w-80">
           <CartSummary subtotalInPaise={subtotalInPaise} deliveryChargeInPaise={deliveryCharge} />
 
-          {belowMinimum ? (
-            <p className="mt-3 rounded-md bg-warning/15 px-3 py-2 text-sm text-ink">
-              Minimum order amount is {formatPrice(shopConfig.minimumOrderInPaise)}. Add {formatPrice(shopConfig.minimumOrderInPaise - subtotalInPaise)} more to checkout.
-            </p>
-          ) : null}
-
-          <Button size="lg" fullWidth className="mt-4" disabled={belowMinimum} onClick={() => router.push("/checkout")}>
+          <Button size="lg" fullWidth className="mt-4" onClick={() => router.push("/checkout")}>
             Proceed to Checkout
           </Button>
         </div>

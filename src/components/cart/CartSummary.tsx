@@ -1,5 +1,5 @@
 import { formatPrice } from "@/lib/utils/price";
-import { shopConfig } from "@/config/shop.config";
+import { getShopSettings } from "@/lib/data/settingsService";
 
 export function CartSummary({
   subtotalInPaise,
@@ -9,7 +9,7 @@ export function CartSummary({
   deliveryChargeInPaise: number;
 }) {
   const total = subtotalInPaise + deliveryChargeInPaise;
-  const remainingForFreeDelivery = shopConfig.freeDeliveryThresholdInPaise - subtotalInPaise;
+  const remainingForFreeDelivery = getShopSettings().freeDeliveryThresholdInPaise - subtotalInPaise;
 
   return (
     <div className="rounded-lg border border-border bg-surface p-4">

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAdminAuth } from "@/context/AdminAuthContext";
-import { TrendingUp, Box, Package, Users, Tag, LogOut } from "@/components/ui/icons";
+import { TrendingUp, Box, Package, Users, Tag, Settings, LogOut } from "@/components/ui/icons";
 import { clsx } from "@/lib/utils/clsx";
 import { shopConfig } from "@/config/shop.config";
 
@@ -13,6 +13,7 @@ const links = [
   { href: "/admin/orders", label: "Orders", icon: Package },
   { href: "/admin/customers", label: "Customers", icon: Users },
   { href: "/admin/offers", label: "Offers", icon: Tag },
+  { href: "/admin/settings", label: "Settings", icon: Settings },
 ];
 
 export function AdminSidebar() {
