@@ -31,10 +31,10 @@ export default function AdminSettingsPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-xl font-bold text-ink sm:text-2xl">Settings</h1>
+      <h1 className="text-xl font-bold text-ink dark:text-ink-dark sm:text-2xl">Settings</h1>
 
-      <form onSubmit={handleSubmit} className="flex max-w-md flex-col gap-4 rounded-lg border border-border bg-surface p-4">
-        <h2 className="font-semibold text-ink">Delivery</h2>
+      <form onSubmit={handleSubmit} className="flex max-w-md flex-col gap-4 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
+        <h2 className="font-semibold text-ink dark:text-ink-dark">Delivery</h2>
         <Input
           label="Delivery Charge (₹)"
           type="number"

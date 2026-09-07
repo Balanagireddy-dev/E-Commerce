@@ -87,7 +87,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6">
-      <h1 className="mb-4 text-xl font-bold text-ink sm:text-2xl">Checkout</h1>
+      <h1 className="mb-4 text-xl font-bold text-ink dark:text-ink-dark sm:text-2xl">Checkout</h1>
       <div className="flex flex-col gap-6 md:flex-row">
         <div className="flex-1">
           <CheckoutForm onSubmit={handleSubmit} submitting={submitting} />

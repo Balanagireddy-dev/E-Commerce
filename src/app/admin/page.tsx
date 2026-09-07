@@ -26,7 +26,7 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-xl font-bold text-ink sm:text-2xl">Dashboard</h1>
+      <h1 className="text-xl font-bold text-ink dark:text-ink-dark sm:text-2xl">Dashboard</h1>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatsCard label="Total Revenue" value={formatPrice(totalRevenue)} icon={<TrendingUp width={20} height={20} />} tone="brand" />
@@ -36,25 +36,25 @@ export default function AdminDashboardPage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <section className="rounded-lg border border-border bg-surface p-4">
+        <section className="rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-semibold text-ink">Recent Orders</h2>
+            <h2 className="font-semibold text-ink dark:text-ink-dark">Recent Orders</h2>
             <Link href="/admin/orders" className="text-sm font-medium text-brand-600 hover:text-brand-700">
               View all
             </Link>
           </div>
           {orders.length === 0 ? (
-            <p className="text-sm text-ink-muted">No orders placed yet.</p>
+            <p className="text-sm text-ink-muted dark:text-ink-muted-dark">No orders placed yet.</p>
           ) : (
             <ul className="flex flex-col divide-y divide-border">
               {orders.slice(0, 6).map((order) => (
                 <li key={order.id} className="flex items-center justify-between py-2.5 text-sm">
                   <div>
-                    <p className="font-medium text-ink">#{order.id}</p>
-                    <p className="text-xs text-ink-muted">{order.address.fullName}</p>
+                    <p className="font-medium text-ink dark:text-ink-dark">#{order.id}</p>
+                    <p className="text-xs text-ink-muted dark:text-ink-muted-dark">{order.address.fullName}</p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="font-semibold text-ink">{formatPrice(order.totalInPaise)}</span>
+                    <span className="font-semibold text-ink dark:text-ink-dark">{formatPrice(order.totalInPaise)}</span>
                     <OrderStatusBadge status={order.status} />
                   </div>
                 </li>
@@ -63,15 +63,15 @@ export default function AdminDashboardPage() {
           )}
         </section>
 
-        <section className="rounded-lg border border-border bg-surface p-4">
-          <h2 className="mb-3 font-semibold text-ink">Low Stock Alerts</h2>
+        <section className="rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
+          <h2 className="mb-3 font-semibold text-ink dark:text-ink-dark">Low Stock Alerts</h2>
           {lowStockProducts.length === 0 ? (
-            <p className="text-sm text-ink-muted">All products are well stocked.</p>
+            <p className="text-sm text-ink-muted dark:text-ink-muted-dark">All products are well stocked.</p>
           ) : (
             <ul className="flex flex-col divide-y divide-border">
               {lowStockProducts.slice(0, 6).map((p) => (
                 <li key={p.id} className="flex items-center justify-between py-2.5 text-sm">
-                  <span className="font-medium text-ink">{p.name}</span>
+                  <span className="font-medium text-ink dark:text-ink-dark">{p.name}</span>
                   <span className="rounded-full bg-warning/15 px-2.5 py-1 text-xs font-semibold text-warning">
                     {p.stock} left
                   </span>

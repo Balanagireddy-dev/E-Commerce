@@ -44,15 +44,15 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="relative z-10 w-full max-w-lg animate-slide-up rounded-t-xl bg-surface shadow-lg sm:rounded-xl sm:animate-fade-in max-h-[90vh] overflow-y-auto"
+        className="relative z-10 w-full max-w-lg animate-slide-up rounded-t-xl bg-surface dark:bg-surface-dark shadow-lg sm:rounded-xl sm:animate-fade-in max-h-[90vh] overflow-y-auto"
       >
-        <div className="flex items-center justify-between border-b border-border px-5 py-4">
-          {title ? <h2 className="text-lg font-semibold text-ink">{title}</h2> : <span />}
+        <div className="flex items-center justify-between border-b border-border dark:border-border-dark px-5 py-4">
+          {title ? <h2 className="text-lg font-semibold text-ink dark:text-ink-dark">{title}</h2> : <span />}
           <button
             type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            className="rounded-full p-2 text-ink-muted hover:bg-surface-alt"
+            className="rounded-full p-2 text-ink-muted dark:text-ink-muted-dark hover:bg-surface-alt hover:dark:bg-surface-alt-dark"
           >
             <X />
           </button>

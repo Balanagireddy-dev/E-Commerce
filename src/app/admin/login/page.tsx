@@ -25,14 +25,14 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-surface-alt px-4">
-      <form onSubmit={handleSubmit} className="w-full max-w-sm rounded-xl border border-border bg-surface p-6 shadow-md">
+    <div className="flex min-h-screen items-center justify-center bg-surface-alt dark:bg-surface-alt-dark px-4">
+      <form onSubmit={handleSubmit} className="w-full max-w-sm rounded-xl border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-6 shadow-md">
         <div className="mb-6 flex flex-col items-center text-center">
           <span className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-lg font-bold text-white">
             {shopConfig.logoText}
           </span>
-          <h1 className="text-lg font-bold text-ink">Admin Login</h1>
-          <p className="text-sm text-ink-muted">Sign in to manage {shopConfig.shortName}</p>
+          <h1 className="text-lg font-bold text-ink dark:text-ink-dark">Admin Login</h1>
+          <p className="text-sm text-ink-muted dark:text-ink-muted-dark">Sign in to manage {shopConfig.shortName}</p>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -49,7 +49,7 @@ export default function AdminLoginPage() {
           <Button type="submit" size="lg" fullWidth>
             Login
           </Button>
-          <p className="text-center text-xs text-ink-muted">Demo credentials: admin / admin123</p>
+          <p className="text-center text-xs text-ink-muted dark:text-ink-muted-dark">Demo credentials: admin / admin123</p>
         </div>
       </form>
     </div>

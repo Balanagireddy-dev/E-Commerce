@@ -24,7 +24,7 @@ function AdminGuard({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col md:flex-row">
       <AdminSidebar />
-      <main className="flex-1 bg-surface-alt p-4 sm:p-6">{children}</main>
+      <main className="flex-1 bg-surface-alt dark:bg-surface-alt-dark p-4 sm:p-6">{children}</main>
     </div>
   );
 }

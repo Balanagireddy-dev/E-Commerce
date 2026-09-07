@@ -2,6 +2,16 @@ import { ORDER_STATUS_LABELS, ORDER_STATUS_SEQUENCE, PAYMENT_STATUS_LABELS, type
 import { Check, X, Clock, CheckCircle } from "@/components/ui/icons";
 import { clsx } from "@/lib/utils/clsx";
 
+/** One color per order status, reused by the status badge and the admin status picker. */
+export const ORDER_STATUS_TONE: Record<OrderStatusType, string> = {
+  pending: "bg-warning/15 text-warning",
+  confirmed: "bg-info/15 text-info",
+  preparing: "bg-accent/15 text-accent",
+  out_for_delivery: "bg-transit/15 text-transit",
+  delivered: "bg-success/15 text-success",
+  cancelled: "bg-danger/15 text-danger",
+};
+
 export function PaymentStatusBadge({ status, method }: { status: PaymentStatus; method: PaymentMethod }) {
   const isPaid = status === "paid";
   return (
@@ -19,14 +29,8 @@ export function PaymentStatusBadge({ status, method }: { status: PaymentStatus; 
 }
 
 export function OrderStatusBadge({ status }: { status: OrderStatusType }) {
-  const toneClass =
-    status === "delivered"
-      ? "bg-success/10 text-success"
-      : status === "cancelled"
-      ? "bg-danger/10 text-danger"
-      : "bg-brand-100 text-brand-700";
   return (
-    <span className={clsx("inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold", toneClass)}>
+    <span className={clsx("inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold", ORDER_STATUS_TONE[status])}>
       {ORDER_STATUS_LABELS[status]}
     </span>
   );
@@ -55,7 +59,7 @@ export function OrderStatusTracker({ status }: { status: OrderStatusType }) {
               <span
                 className={clsx(
                   "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2",
-                  done ? "border-brand-600 bg-brand-600 text-white" : "border-border bg-surface text-ink-muted"
+                  done ? "border-brand-600 bg-brand-600 text-white" : "border-border dark:border-border-dark bg-surface dark:bg-surface-dark text-ink-muted dark:text-ink-muted-dark"
                 )}
               >
                 {done ? <Check width={14} height={14} /> : <span className="h-1.5 w-1.5 rounded-full bg-current" />}
@@ -63,7 +67,7 @@ export function OrderStatusTracker({ status }: { status: OrderStatusType }) {
               {!isLast ? <span className={clsx("w-0.5 flex-1 min-h-[24px]", done ? "bg-brand-600" : "bg-border")} /> : null}
             </div>
             <div className="pb-6">
-              <p className={clsx("text-sm font-semibold", done ? "text-ink" : "text-ink-muted")}>
+              <p className={clsx("text-sm font-semibold", done ? "text-ink dark:text-ink-dark" : "text-ink-muted dark:text-ink-muted-dark")}>
                 {ORDER_STATUS_LABELS[step]}
               </p>
             </div>

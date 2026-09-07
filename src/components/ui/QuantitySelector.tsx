@@ -19,7 +19,7 @@ export function QuantitySelector({
 
   return (
     <div
-      className="inline-flex items-center rounded-lg border border-brand-500 bg-surface overflow-hidden"
+      className="inline-flex items-center rounded-lg border border-brand-500 bg-surface dark:bg-surface-dark overflow-hidden"
       role="group"
       aria-label="Quantity selector"
     >
@@ -31,7 +31,7 @@ export function QuantitySelector({
       >
         <Minus />
       </button>
-      <span className="min-w-[2rem] text-center text-sm font-semibold text-ink" aria-live="polite">
+      <span className="min-w-[2rem] text-center text-sm font-semibold text-ink dark:text-ink-dark" aria-live="polite">
         {qty}
       </span>
       <button

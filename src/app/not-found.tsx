@@ -7,8 +7,8 @@ export default function NotFound() {
       <span className="text-5xl" aria-hidden>
         🛒
       </span>
-      <h1 className="text-xl font-bold text-ink">Page not found</h1>
-      <p className="text-sm text-ink-muted">The page you&apos;re looking for doesn&apos;t exist or has moved.</p>
+      <h1 className="text-xl font-bold text-ink dark:text-ink-dark">Page not found</h1>
+      <p className="text-sm text-ink-muted dark:text-ink-muted-dark">The page you&apos;re looking for doesn&apos;t exist or has moved.</p>
       <Link href="/">
         <Button size="lg">Go to Homepage</Button>
       </Link>

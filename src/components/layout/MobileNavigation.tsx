@@ -22,8 +22,7 @@ export function MobileNavigation() {
   return (
     <nav
       aria-label="Primary"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-surface pb-safe pt-1 md:hidden"
-      style={{ height: "var(--mobile-nav-height)" }}
+      className="fixed inset-x-0 bottom-0 z-40 h-mobile-nav border-t border-border dark:border-border-dark bg-surface dark:bg-surface-dark pb-safe pt-1 md:hidden"
     >
       <ul className="grid h-full grid-cols-4">
         {items.map(({ href, label, icon: Icon }) => {
@@ -34,7 +33,7 @@ export function MobileNavigation() {
                 href={href}
                 className={clsx(
                   "flex h-full flex-col items-center justify-center gap-0.5 text-xs font-medium",
-                  active ? "text-brand-600" : "text-ink-muted"
+                  active ? "text-brand-600" : "text-ink-muted dark:text-ink-muted-dark"
                 )}
                 aria-current={active ? "page" : undefined}
               >

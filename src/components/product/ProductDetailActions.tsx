@@ -38,7 +38,7 @@ export function ProductDetailActions({ product }: { product: Product }) {
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
       <div className="flex items-center gap-3">
-        <span className="text-sm font-medium text-ink-soft">Qty</span>
+        <span className="text-sm font-medium text-ink-soft dark:text-ink-soft-dark">Qty</span>
         <QuantitySelector qty={localQty} max={product.stock} onIncrease={() => setLocalQty((q) => Math.min(q + 1, product.stock))} onDecrease={() => setLocalQty((q) => Math.max(1, q - 1))} />
       </div>
       <div className="flex flex-1 gap-3">

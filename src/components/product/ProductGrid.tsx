@@ -4,9 +4,9 @@ import { ProductCard } from "./ProductCard";
 export function ProductGrid({ products, categories }: { products: Product[]; categories: Category[] }) {
   if (products.length === 0) {
     return (
-      <div className="flex flex-col items-center gap-2 py-16 text-center text-ink-muted">
+      <div className="flex flex-col items-center gap-2 py-16 text-center text-ink-muted dark:text-ink-muted-dark">
         <span className="text-4xl">🛒</span>
-        <p className="font-medium text-ink">No products found</p>
+        <p className="font-medium text-ink dark:text-ink-dark">No products found</p>
         <p className="text-sm">Try adjusting your search or filters.</p>
       </div>
     );

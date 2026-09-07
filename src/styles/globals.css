@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./tokens.css";
-
 * {
   box-sizing: border-box;
 }
@@ -13,14 +11,12 @@ html {
 }
 
 body {
-  background: var(--surface-alt);
-  color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--brand-200);
+  background: theme("colors.brand.200");
 }
 
 a {
@@ -46,6 +42,6 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--brand-500);
+  outline: 2px solid theme("colors.brand.500");
   outline-offset: 2px;
 }

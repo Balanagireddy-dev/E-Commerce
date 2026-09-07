@@ -13,20 +13,20 @@ export function OrderCard({ order }: { order: Order }) {
   return (
     <Link
       href={`/order-confirmation/${order.id}`}
-      className="flex items-center gap-3 rounded-lg border border-border bg-surface p-4 hover:shadow-md transition-shadow"
+      className="flex items-center gap-3 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4 hover:shadow-md transition-shadow"
     >
       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600">
         <Package width={20} height={20} />
       </span>
       <div className="flex-1 min-w-0">
         <div className="flex items-center justify-between gap-2">
-          <p className="font-semibold text-ink truncate">Order #{order.id}</p>
+          <p className="font-semibold text-ink dark:text-ink-dark truncate">Order #{order.id}</p>
           <OrderStatusBadge status={order.status} />
         </div>
-        <p className="text-sm text-ink-muted">
+        <p className="text-sm text-ink-muted dark:text-ink-muted-dark">
           {itemCount} item{itemCount > 1 ? "s" : ""} · {date.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
         </p>
-        <p className="flex items-center gap-2 text-sm font-semibold text-ink">
+        <p className="flex items-center gap-2 text-sm font-semibold text-ink dark:text-ink-dark">
           {formatPrice(order.totalInPaise)}
           <span
             className={clsx(
@@ -38,7 +38,7 @@ export function OrderCard({ order }: { order: Order }) {
           </span>
         </p>
       </div>
-      <ChevronRight className="text-ink-muted shrink-0" />
+      <ChevronRight className="text-ink-muted dark:text-ink-muted-dark shrink-0" />
     </Link>
   );
 }

@@ -20,11 +20,11 @@ export function StatsCard({
   }[tone];
 
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-border bg-surface p-4">
+    <div className="flex items-center gap-3 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
       <span className={clsx("flex h-11 w-11 shrink-0 items-center justify-center rounded-full", toneClasses)}>{icon}</span>
       <div>
-        <p className="text-xs font-medium text-ink-muted">{label}</p>
-        <p className="text-xl font-bold text-ink">{value}</p>
+        <p className="text-xs font-medium text-ink-muted dark:text-ink-muted-dark">{label}</p>
+        <p className="text-xl font-bold text-ink dark:text-ink-dark">{value}</p>
       </div>
     </div>
   );

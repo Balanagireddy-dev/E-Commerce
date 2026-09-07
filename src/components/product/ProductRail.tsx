@@ -20,7 +20,7 @@ export function ProductRail({
   return (
     <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
       <div className="mb-3 flex items-center justify-between">
-        <h2 className="text-lg font-bold text-ink sm:text-xl">{title}</h2>
+        <h2 className="text-lg font-bold text-ink dark:text-ink-dark sm:text-xl">{title}</h2>
         {viewAllHref ? (
           <Link href={viewAllHref} className="flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
             View all <ChevronRight width={16} height={16} />

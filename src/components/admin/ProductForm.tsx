@@ -96,7 +96,7 @@ export function ProductForm({
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex items-center gap-4">
-        <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-surface-alt">
+        <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-surface-alt dark:bg-surface-alt-dark">
           <Image src={previewImage} alt="Product preview" fill sizes="80px" className="object-cover" />
         </div>
         <div>
@@ -104,14 +104,14 @@ export function ProductForm({
           <Button type="button" variant="outline" size="sm" onClick={() => fileInputRef.current?.click()}>
             <Upload width={16} height={16} /> Upload Image
           </Button>
-          <p className="mt-1 text-xs text-ink-muted">Falls back to category artwork if none uploaded.</p>
+          <p className="mt-1 text-xs text-ink-muted dark:text-ink-muted-dark">Falls back to category artwork if none uploaded.</p>
         </div>
       </div>
 
       <Input label="Product Name" value={values.name} onChange={setField("name")} required />
 
       <div>
-        <label htmlFor="pf-category" className="mb-1.5 block text-sm font-medium text-ink-soft">
+        <label htmlFor="pf-category" className="mb-1.5 block text-sm font-medium text-ink-soft dark:text-ink-soft-dark">
           Category
         </label>
         <select
@@ -119,7 +119,7 @@ export function ProductForm({
           value={values.categoryId}
           onChange={setField("categoryId")}
           required
-          className="h-12 w-full rounded-lg border border-border bg-surface px-4 text-base text-ink focus:border-brand-500"
+          className="h-12 w-full rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark px-4 text-base text-ink dark:text-ink-dark focus:border-brand-500"
         >
           <option value="" disabled>
             Select a category

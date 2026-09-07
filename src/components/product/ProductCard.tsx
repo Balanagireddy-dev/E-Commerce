@@ -22,8 +22,8 @@ export function ProductCard({ product, category }: { product: Product; category?
   const outOfStock = product.stock <= 0;
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface shadow-sm transition-shadow hover:shadow-md">
-      <Link href={`/products/${product.slug}`} className="relative block aspect-square bg-surface-alt">
+    <div className="group flex flex-col overflow-hidden rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark shadow-sm transition-shadow hover:shadow-md">
+      <Link href={`/products/${product.slug}`} className="relative block aspect-square bg-surface-alt dark:bg-surface-alt-dark">
         <Image
           src={image}
           alt={product.name}
@@ -45,10 +45,10 @@ export function ProductCard({ product, category }: { product: Product; category?
       </Link>
 
       <div className="flex flex-1 flex-col gap-1.5 p-3">
-        <Link href={`/products/${product.slug}`} className="line-clamp-2 text-sm font-medium text-ink hover:text-brand-700">
+        <Link href={`/products/${product.slug}`} className="line-clamp-2 text-sm font-medium text-ink dark:text-ink-dark hover:text-brand-700">
           {product.name}
         </Link>
-        <span className="text-xs text-ink-muted">{product.unit}</span>
+        <span className="text-xs text-ink-muted dark:text-ink-muted-dark">{product.unit}</span>
         <PriceDisplay priceInPaise={price} mrpInPaise={product.discountPriceInPaise ? product.priceInPaise : undefined} size="sm" />
 
         <div className="mt-auto pt-2">

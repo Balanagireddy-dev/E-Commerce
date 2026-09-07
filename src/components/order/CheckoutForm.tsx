@@ -39,8 +39,8 @@ export function CheckoutForm({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
-      <section className="flex flex-col gap-4 rounded-lg border border-border bg-surface p-4">
-        <h2 className="font-semibold text-ink">Delivery Details</h2>
+      <section className="flex flex-col gap-4 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
+        <h2 className="font-semibold text-ink dark:text-ink-dark">Delivery Details</h2>
         <Input
           label="Full Name"
           placeholder="e.g. Ramesh Kumar"
@@ -89,8 +89,8 @@ export function CheckoutForm({
         />
       </section>
 
-      <section className="flex flex-col gap-3 rounded-lg border border-border bg-surface p-4">
-        <h2 className="font-semibold text-ink">Payment Method</h2>
+      <section className="flex flex-col gap-3 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
+        <h2 className="font-semibold text-ink dark:text-ink-dark">Payment Method</h2>
         <PaymentOption
           label="Cash on Delivery"
           description="Pay with cash when your order arrives"
@@ -129,20 +129,20 @@ function PaymentOption({
       onClick={onSelect}
       className={clsx(
         "flex items-center gap-3 rounded-lg border p-3 text-left transition-colors",
-        selected ? "border-brand-600 bg-brand-50" : "border-border hover:bg-surface-alt"
+        selected ? "border-brand-600 bg-brand-50" : "border-border dark:border-border-dark hover:bg-surface-alt hover:dark:bg-surface-alt-dark"
       )}
     >
       <span
         className={clsx(
           "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2",
-          selected ? "border-brand-600 bg-brand-600 text-white" : "border-border"
+          selected ? "border-brand-600 bg-brand-600 text-white" : "border-border dark:border-border-dark"
         )}
       >
         {selected ? <CheckCircle width={14} height={14} /> : null}
       </span>
       <span>
-        <span className="block text-sm font-semibold text-ink">{label}</span>
-        <span className="block text-xs text-ink-muted">{description}</span>
+        <span className="block text-sm font-semibold text-ink dark:text-ink-dark">{label}</span>
+        <span className="block text-xs text-ink-muted dark:text-ink-muted-dark">{description}</span>
       </span>
     </button>
   );

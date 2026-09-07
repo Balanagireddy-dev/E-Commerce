@@ -21,9 +21,9 @@ export function PriceDisplay({
 
   return (
     <div className={clsx("flex items-baseline gap-2 flex-wrap", className)}>
-      <span className={clsx("font-bold text-ink", sizeClasses)}>{formatPrice(priceInPaise)}</span>
+      <span className={clsx("font-bold text-ink dark:text-ink-dark", sizeClasses)}>{formatPrice(priceInPaise)}</span>
       {hasDiscount ? (
-        <span className="text-sm text-ink-muted line-through">{formatPrice(mrpInPaise!)}</span>
+        <span className="text-sm text-ink-muted dark:text-ink-muted-dark line-through">{formatPrice(mrpInPaise!)}</span>
       ) : null}
     </div>
   );

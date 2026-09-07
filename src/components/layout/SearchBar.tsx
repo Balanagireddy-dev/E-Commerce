@@ -28,11 +28,11 @@ export function SearchBar({ size = "md", autoFocus = false }: { size?: "md" | "l
       </label>
       <div
         className={clsx(
-          "flex items-center gap-2 rounded-full border border-border bg-surface px-4 shadow-sm",
+          "flex items-center gap-2 rounded-full border border-border dark:border-border-dark bg-surface dark:bg-surface-dark px-4 shadow-sm",
           size === "lg" ? "h-14" : "h-11"
         )}
       >
-        <Search className="text-ink-muted shrink-0" />
+        <Search className="text-ink-muted dark:text-ink-muted-dark shrink-0" />
         <input
           id="site-search"
           type="search"
@@ -40,7 +40,7 @@ export function SearchBar({ size = "md", autoFocus = false }: { size?: "md" | "l
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Search for atta, rice, oil, biscuits..."
-          className="h-full w-full bg-transparent text-base text-ink placeholder:text-ink-muted focus:outline-none"
+          className="h-full w-full bg-transparent text-base text-ink dark:text-ink-dark placeholder:text-ink-muted placeholder:dark:text-ink-muted-dark focus:outline-none"
         />
       </div>
     </form>

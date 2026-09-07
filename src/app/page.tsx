@@ -27,7 +27,7 @@ export default async function HomePage() {
       <HeroBanner />
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-        <h2 className="mb-3 text-lg font-bold text-ink sm:text-xl">Shop by Category</h2>
+        <h2 className="mb-3 text-lg font-bold text-ink dark:text-ink-dark sm:text-xl">Shop by Category</h2>
         <div className="no-scrollbar -mx-4 flex gap-4 overflow-x-auto px-4 sm:mx-0 sm:grid sm:grid-cols-7 sm:gap-3 sm:px-0">
           {categories.map((category) => (
             <CategoryCard key={category.id} category={category} />
@@ -48,7 +48,7 @@ export default async function HomePage() {
       <ProductRail title="New Arrivals" products={newProducts} categories={categories} viewAllHref="/products?sort=newest" />
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-        <h2 className="mb-3 text-lg font-bold text-ink sm:text-xl">All Products</h2>
+        <h2 className="mb-3 text-lg font-bold text-ink dark:text-ink-dark sm:text-xl">All Products</h2>
         <ProductGrid products={products.slice(0, 10)} categories={categories} />
       </section>
     </div>

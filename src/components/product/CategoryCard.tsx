@@ -14,7 +14,7 @@ export function CategoryCard({ category }: { category: Category }) {
       >
         {category.icon}
       </span>
-      <span className="w-20 text-xs font-medium leading-tight text-ink-soft">{category.name}</span>
+      <span className="w-20 text-xs font-medium leading-tight text-ink-soft dark:text-ink-soft-dark">{category.name}</span>
     </Link>
   );
 }

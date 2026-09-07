@@ -24,7 +24,7 @@ export default function OrderConfirmationPage({ params }: { params: { id: string
   if (order === null) {
     return (
       <div className="mx-auto max-w-md px-4 py-20 text-center">
-        <p className="text-lg font-semibold text-ink">Order not found</p>
+        <p className="text-lg font-semibold text-ink dark:text-ink-dark">Order not found</p>
         <Button className="mt-4" onClick={() => router.push("/products")}>
           Continue Shopping
         </Button>
@@ -38,54 +38,54 @@ export default function OrderConfirmationPage({ params }: { params: { id: string
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-success/10 text-success">
           <CheckCircle width={32} height={32} />
         </span>
-        <h1 className="text-2xl font-bold text-ink">Order Placed Successfully!</h1>
-        <p className="text-sm text-ink-muted">Order #{order.id}</p>
-        <p className="flex items-center gap-1.5 text-sm text-ink-soft">
+        <h1 className="text-2xl font-bold text-ink dark:text-ink-dark">Order Placed Successfully!</h1>
+        <p className="text-sm text-ink-muted dark:text-ink-muted-dark">Order #{order.id}</p>
+        <p className="flex items-center gap-1.5 text-sm text-ink-soft dark:text-ink-soft-dark">
           <Clock width={16} height={16} /> Estimated delivery in {order.estimatedDeliveryMinutes} minutes
         </p>
         <PaymentStatusBadge status={order.paymentStatus} method={order.paymentMethod} />
       </div>
 
-      <div className="mt-6 rounded-lg border border-border bg-surface p-4">
-        <h2 className="mb-3 font-semibold text-ink">Order Status</h2>
+      <div className="mt-6 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
+        <h2 className="mb-3 font-semibold text-ink dark:text-ink-dark">Order Status</h2>
         <OrderStatusTracker status={order.status} />
       </div>
 
-      <div className="mt-4 rounded-lg border border-border bg-surface p-4">
-        <h2 className="mb-3 font-semibold text-ink">Items Ordered</h2>
+      <div className="mt-4 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
+        <h2 className="mb-3 font-semibold text-ink dark:text-ink-dark">Items Ordered</h2>
         <ul className="flex flex-col divide-y divide-border">
           {order.items.map((item) => (
             <li key={item.productId} className="flex items-center gap-3 py-3">
-              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-md bg-surface-alt">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-md bg-surface-alt dark:bg-surface-alt-dark">
                 <Image src={item.image} alt={item.name} fill sizes="56px" className="object-cover" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-ink">{item.name}</p>
-                <p className="text-xs text-ink-muted">{item.unit} × {item.qty}</p>
+                <p className="text-sm font-medium text-ink dark:text-ink-dark">{item.name}</p>
+                <p className="text-xs text-ink-muted dark:text-ink-muted-dark">{item.unit} × {item.qty}</p>
               </div>
-              <p className="text-sm font-semibold text-ink">{formatPrice(item.priceInPaise * item.qty)}</p>
+              <p className="text-sm font-semibold text-ink dark:text-ink-dark">{formatPrice(item.priceInPaise * item.qty)}</p>
             </li>
           ))}
         </ul>
-        <dl className="mt-3 space-y-1.5 border-t border-border pt-3 text-sm">
-          <div className="flex justify-between text-ink-soft">
+        <dl className="mt-3 space-y-1.5 border-t border-border dark:border-border-dark pt-3 text-sm">
+          <div className="flex justify-between text-ink-soft dark:text-ink-soft-dark">
             <dt>Subtotal</dt>
             <dd>{formatPrice(order.subtotalInPaise)}</dd>
           </div>
-          <div className="flex justify-between text-ink-soft">
+          <div className="flex justify-between text-ink-soft dark:text-ink-soft-dark">
             <dt>Delivery Charge</dt>
             <dd>{order.deliveryChargeInPaise === 0 ? "FREE" : formatPrice(order.deliveryChargeInPaise)}</dd>
           </div>
-          <div className="flex justify-between text-base font-bold text-ink">
+          <div className="flex justify-between text-base font-bold text-ink dark:text-ink-dark">
             <dt>Total</dt>
             <dd>{formatPrice(order.totalInPaise)}</dd>
           </div>
-          <div className="flex items-center justify-between border-t border-border pt-2 text-ink-soft">
+          <div className="flex items-center justify-between border-t border-border dark:border-border-dark pt-2 text-ink-soft dark:text-ink-soft-dark">
             <dt>Payment Method</dt>
-            <dd className="font-medium text-ink">{order.paymentMethod === "cod" ? "Cash on Delivery" : "Online Payment"}</dd>
+            <dd className="font-medium text-ink dark:text-ink-dark">{order.paymentMethod === "cod" ? "Cash on Delivery" : "Online Payment"}</dd>
           </div>
           <div className="flex items-center justify-between">
-            <dt className="text-ink-soft">Payment Status</dt>
+            <dt className="text-ink-soft dark:text-ink-soft-dark">Payment Status</dt>
             <dd>
               <PaymentStatusBadge status={order.paymentStatus} method={order.paymentMethod} />
             </dd>
@@ -93,11 +93,11 @@ export default function OrderConfirmationPage({ params }: { params: { id: string
         </dl>
       </div>
 
-      <div className="mt-4 rounded-lg border border-border bg-surface p-4">
-        <h2 className="mb-2 flex items-center gap-1.5 font-semibold text-ink">
+      <div className="mt-4 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
+        <h2 className="mb-2 flex items-center gap-1.5 font-semibold text-ink dark:text-ink-dark">
           <MapPin width={18} height={18} /> Delivery Address
         </h2>
-        <p className="text-sm text-ink-soft">
+        <p className="text-sm text-ink-soft dark:text-ink-soft-dark">
           {order.address.fullName}, {order.address.mobile}
           <br />
           {order.address.addressLine}

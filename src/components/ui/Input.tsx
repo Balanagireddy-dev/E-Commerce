@@ -18,7 +18,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   return (
     <div className="flex flex-col gap-1.5">
       {label ? (
-        <label htmlFor={fieldId} className="text-sm font-medium text-ink-soft">
+        <label htmlFor={fieldId} className="text-sm font-medium text-ink-soft dark:text-ink-soft-dark">
           {label}
           {required ? (
             <span className="ml-0.5 text-danger" aria-hidden>
@@ -35,9 +35,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         aria-required={required}
         aria-describedby={error ? `${fieldId}-error` : hint ? `${fieldId}-hint` : undefined}
         className={clsx(
-          "h-12 w-full rounded-lg border bg-surface px-4 text-base text-ink placeholder:text-ink-muted",
+          "h-12 w-full rounded-lg border bg-surface dark:bg-surface-dark px-4 text-base text-ink dark:text-ink-dark placeholder:text-ink-muted placeholder:dark:text-ink-muted-dark",
           "transition-colors focus:border-brand-500",
-          error ? "border-danger" : "border-border",
+          error ? "border-danger" : "border-border dark:border-border-dark",
           className
         )}
         {...props}
@@ -47,7 +47,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           {error}
         </span>
       ) : hint ? (
-        <span id={`${fieldId}-hint`} className="text-sm text-ink-muted">
+        <span id={`${fieldId}-hint`} className="text-sm text-ink-muted dark:text-ink-muted-dark">
           {hint}
         </span>
       ) : null}
@@ -66,7 +66,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
   return (
     <div className="flex flex-col gap-1.5">
       {label ? (
-        <label htmlFor={fieldId} className="text-sm font-medium text-ink-soft">
+        <label htmlFor={fieldId} className="text-sm font-medium text-ink-soft dark:text-ink-soft-dark">
           {label}
           {required ? (
             <span className="ml-0.5 text-danger" aria-hidden>
@@ -82,14 +82,14 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
         aria-invalid={!!error}
         aria-required={required}
         className={clsx(
-          "min-h-[96px] w-full rounded-lg border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted",
+          "min-h-[96px] w-full rounded-lg border bg-surface dark:bg-surface-dark px-4 py-3 text-base text-ink dark:text-ink-dark placeholder:text-ink-muted placeholder:dark:text-ink-muted-dark",
           "transition-colors focus:border-brand-500",
-          error ? "border-danger" : "border-border",
+          error ? "border-danger" : "border-border dark:border-border-dark",
           className
         )}
         {...props}
       />
-      {error ? <span className="text-sm text-danger">{error}</span> : hint ? <span className="text-sm text-ink-muted">{hint}</span> : null}
+      {error ? <span className="text-sm text-danger">{error}</span> : hint ? <span className="text-sm text-ink-muted dark:text-ink-muted-dark">{hint}</span> : null}
     </div>
   );
 });

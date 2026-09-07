@@ -1,7 +1,7 @@
 /**
  * Central shop configuration.
  * Cloning this template for a different Kirana/grocery shop should only
- * require editing this file (+ theme tokens in src/styles/tokens.css and
+ * require editing this file (+ theme colors in tailwind.config.ts and
  * data in src/data/*.json) — never the UI components.
  */
 export const shopConfig = {

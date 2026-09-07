@@ -36,17 +36,17 @@ export default function AdminCustomersPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-xl font-bold text-ink sm:text-2xl">Customers</h1>
+      <h1 className="text-xl font-bold text-ink dark:text-ink-dark sm:text-2xl">Customers</h1>
 
       {customers.length === 0 ? (
-        <div className="flex flex-col items-center gap-2 rounded-lg border border-border bg-surface py-16 text-center text-ink-muted">
+        <div className="flex flex-col items-center gap-2 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark py-16 text-center text-ink-muted dark:text-ink-muted-dark">
           <Users width={32} height={32} />
           <p>No customers yet — they will appear here after the first order.</p>
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-border bg-surface">
+        <div className="overflow-x-auto rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark">
           <table className="w-full min-w-[600px] text-sm">
-            <thead className="border-b border-border bg-surface-alt text-left text-xs uppercase text-ink-muted">
+            <thead className="border-b border-border dark:border-border-dark bg-surface-alt dark:bg-surface-alt-dark text-left text-xs uppercase text-ink-muted dark:text-ink-muted-dark">
               <tr>
                 <th className="px-4 py-3">Name</th>
                 <th className="px-4 py-3">Mobile</th>
@@ -58,11 +58,11 @@ export default function AdminCustomersPage() {
             <tbody className="divide-y divide-border">
               {customers.map((c) => (
                 <tr key={c.mobile}>
-                  <td className="px-4 py-3 font-medium text-ink">{c.name}</td>
-                  <td className="px-4 py-3 text-ink-soft">{c.mobile}</td>
-                  <td className="px-4 py-3 text-ink-soft">{c.orderCount}</td>
-                  <td className="px-4 py-3 font-semibold text-ink">{formatPrice(c.totalSpentInPaise)}</td>
-                  <td className="px-4 py-3 text-ink-soft">
+                  <td className="px-4 py-3 font-medium text-ink dark:text-ink-dark">{c.name}</td>
+                  <td className="px-4 py-3 text-ink-soft dark:text-ink-soft-dark">{c.mobile}</td>
+                  <td className="px-4 py-3 text-ink-soft dark:text-ink-soft-dark">{c.orderCount}</td>
+                  <td className="px-4 py-3 font-semibold text-ink dark:text-ink-dark">{formatPrice(c.totalSpentInPaise)}</td>
+                  <td className="px-4 py-3 text-ink-soft dark:text-ink-soft-dark">
                     {new Date(c.lastOrderAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
                   </td>
                 </tr>

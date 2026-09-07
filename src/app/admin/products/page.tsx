@@ -60,7 +60,7 @@ export default function AdminProductsPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold text-ink sm:text-2xl">Products</h1>
+        <h1 className="text-xl font-bold text-ink dark:text-ink-dark sm:text-2xl">Products</h1>
         <Button
           onClick={() => {
             setEditing(null);
@@ -71,9 +71,9 @@ export default function AdminProductsPage() {
         </Button>
       </div>
 
-      <div className="overflow-x-auto rounded-lg border border-border bg-surface">
+      <div className="overflow-x-auto rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark">
         <table className="w-full min-w-[720px] text-sm">
-          <thead className="border-b border-border bg-surface-alt text-left text-xs uppercase text-ink-muted">
+          <thead className="border-b border-border dark:border-border-dark bg-surface-alt dark:bg-surface-alt-dark text-left text-xs uppercase text-ink-muted dark:text-ink-muted-dark">
             <tr>
               <th className="px-4 py-3">Product</th>
               <th className="px-4 py-3">Category</th>
@@ -89,21 +89,21 @@ export default function AdminProductsPage() {
                 <tr key={product.id}>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-md bg-surface-alt">
+                      <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-md bg-surface-alt dark:bg-surface-alt-dark">
                         <Image src={getProductImageSrc(product.images, category)} alt={product.name} fill sizes="40px" className="object-cover" />
                       </div>
-                      <span className="font-medium text-ink">{product.name}</span>
+                      <span className="font-medium text-ink dark:text-ink-dark">{product.name}</span>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-ink-soft">{category?.name ?? "—"}</td>
-                  <td className="px-4 py-3 text-ink-soft">
+                  <td className="px-4 py-3 text-ink-soft dark:text-ink-soft-dark">{category?.name ?? "—"}</td>
+                  <td className="px-4 py-3 text-ink-soft dark:text-ink-soft-dark">
                     {formatPrice(product.discountPriceInPaise ?? product.priceInPaise)}
                     {product.discountPriceInPaise ? (
-                      <span className="ml-1 text-xs text-ink-muted line-through">{formatPrice(product.priceInPaise)}</span>
+                      <span className="ml-1 text-xs text-ink-muted dark:text-ink-muted-dark line-through">{formatPrice(product.priceInPaise)}</span>
                     ) : null}
                   </td>
                   <td className="px-4 py-3">
-                    {product.stock <= 15 ? <Badge tone="warning">{product.stock} left</Badge> : <span className="text-ink-soft">{product.stock}</span>}
+                    {product.stock <= 15 ? <Badge tone="warning">{product.stock} left</Badge> : <span className="text-ink-soft dark:text-ink-soft-dark">{product.stock}</span>}
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex justify-end gap-2">
@@ -113,7 +113,7 @@ export default function AdminProductsPage() {
                           setFormOpen(true);
                         }}
                         aria-label={`Edit ${product.name}`}
-                        className="rounded-md p-2 text-ink-soft hover:bg-surface-alt"
+                        className="rounded-md p-2 text-ink-soft dark:text-ink-soft-dark hover:bg-surface-alt hover:dark:bg-surface-alt-dark"
                       >
                         <Edit width={16} height={16} />
                       </button>

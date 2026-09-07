@@ -12,16 +12,16 @@ export function CartSummary({
   const remainingForFreeDelivery = getShopSettings().freeDeliveryThresholdInPaise - subtotalInPaise;
 
   return (
-    <div className="rounded-lg border border-border bg-surface p-4">
-      <h2 className="mb-3 font-semibold text-ink">Order Summary</h2>
+    <div className="rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
+      <h2 className="mb-3 font-semibold text-ink dark:text-ink-dark">Order Summary</h2>
       <dl className="space-y-2 text-sm">
         <div className="flex justify-between">
-          <dt className="text-ink-soft">Subtotal</dt>
-          <dd className="font-medium text-ink">{formatPrice(subtotalInPaise)}</dd>
+          <dt className="text-ink-soft dark:text-ink-soft-dark">Subtotal</dt>
+          <dd className="font-medium text-ink dark:text-ink-dark">{formatPrice(subtotalInPaise)}</dd>
         </div>
         <div className="flex justify-between">
-          <dt className="text-ink-soft">Delivery Charge</dt>
-          <dd className="font-medium text-ink">
+          <dt className="text-ink-soft dark:text-ink-soft-dark">Delivery Charge</dt>
+          <dd className="font-medium text-ink dark:text-ink-dark">
             {deliveryChargeInPaise === 0 ? <span className="text-success">FREE</span> : formatPrice(deliveryChargeInPaise)}
           </dd>
         </div>
@@ -30,7 +30,7 @@ export function CartSummary({
             Add {formatPrice(remainingForFreeDelivery)} more to get FREE delivery!
           </p>
         ) : null}
-        <div className="flex justify-between border-t border-border pt-2 text-base font-bold">
+        <div className="flex justify-between border-t border-border dark:border-border-dark pt-2 text-base font-bold">
           <dt>Total</dt>
           <dd>{formatPrice(total)}</dd>
         </div>

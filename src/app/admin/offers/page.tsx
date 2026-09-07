@@ -63,27 +63,27 @@ export default function AdminOffersPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold text-ink sm:text-2xl">Offers</h1>
+        <h1 className="text-xl font-bold text-ink dark:text-ink-dark sm:text-2xl">Offers</h1>
         <Button onClick={() => setFormOpen(true)}>
           <Plus width={18} height={18} /> New Offer
         </Button>
       </div>
 
       {offers.length === 0 ? (
-        <div className="flex flex-col items-center gap-2 rounded-lg border border-border bg-surface py-16 text-center text-ink-muted">
+        <div className="flex flex-col items-center gap-2 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark py-16 text-center text-ink-muted dark:text-ink-muted-dark">
           <Tag width={32} height={32} />
           <p>No offers configured yet.</p>
         </div>
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {offers.map((offer) => (
-            <div key={offer.id} className="flex items-start gap-3 rounded-lg border border-border bg-surface p-4">
+            <div key={offer.id} className="flex items-start gap-3 rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-4">
               <span className="text-3xl" aria-hidden>
                 {offer.bannerEmoji}
               </span>
               <div className="flex-1">
-                <p className="font-semibold text-ink">{offer.title}</p>
-                <p className="text-sm text-ink-muted">{offer.description}</p>
+                <p className="font-semibold text-ink dark:text-ink-dark">{offer.title}</p>
+                <p className="text-sm text-ink-muted dark:text-ink-muted-dark">{offer.description}</p>
                 {offer.discountPercent > 0 ? <p className="mt-1 text-xs font-semibold text-accent">{offer.discountPercent}% OFF</p> : null}
               </div>
               <button
@@ -107,14 +107,14 @@ export default function AdminOffersPage() {
             <Input label="Emoji" value={bannerEmoji} onChange={(e) => setBannerEmoji(e.target.value)} />
           </div>
           <div>
-            <label htmlFor="offer-category" className="mb-1.5 block text-sm font-medium text-ink-soft">
+            <label htmlFor="offer-category" className="mb-1.5 block text-sm font-medium text-ink-soft dark:text-ink-soft-dark">
               Category (optional)
             </label>
             <select
               id="offer-category"
               value={categoryId}
               onChange={(e) => setCategoryId(e.target.value)}
-              className="h-12 w-full rounded-lg border border-border bg-surface px-4 text-base text-ink focus:border-brand-500"
+              className="h-12 w-full rounded-lg border border-border dark:border-border-dark bg-surface dark:bg-surface-dark px-4 text-base text-ink dark:text-ink-dark focus:border-brand-500"
             >
               <option value="">All categories</option>
               {categories.map((c) => (

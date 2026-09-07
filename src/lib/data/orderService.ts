@@ -41,7 +41,9 @@ export async function updateOrderStatus(id: string, status: OrderStatus): Promis
   let updated: Order | undefined;
   const next = all.map((o) => {
     if (o.id === id) {
-      updated = { ...o, status };
+      // COD is collected at the door, so delivering the order is what confirms payment.
+      const paymentStatus = status === "delivered" && o.paymentMethod === "cod" ? "paid" : o.paymentStatus;
+      updated = { ...o, status, paymentStatus };
       return updated;
     }
     return o;

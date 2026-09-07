@@ -53,7 +53,7 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
   const content = (
     <div className="flex flex-col gap-6">
       <div>
-        <h3 className="mb-2 text-sm font-semibold text-ink">Sort By</h3>
+        <h3 className="mb-2 text-sm font-semibold text-ink dark:text-ink-dark">Sort By</h3>
         <div className="flex flex-col gap-1">
           {SORT_OPTIONS.map((opt) => (
             <button
@@ -61,7 +61,7 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
               onClick={() => updateParam("sort", opt.value)}
               className={clsx(
                 "rounded-md px-3 py-2 text-left text-sm",
-                activeSort === opt.value ? "bg-brand-50 font-semibold text-brand-700" : "text-ink-soft hover:bg-surface-alt"
+                activeSort === opt.value ? "bg-brand-50 font-semibold text-brand-700" : "text-ink-soft dark:text-ink-soft-dark hover:bg-surface-alt hover:dark:bg-surface-alt-dark"
               )}
             >
               {opt.label}
@@ -71,13 +71,13 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
       </div>
 
       <div>
-        <h3 className="mb-2 text-sm font-semibold text-ink">Category</h3>
+        <h3 className="mb-2 text-sm font-semibold text-ink dark:text-ink-dark">Category</h3>
         <div className="flex flex-col gap-1">
           <button
             onClick={() => updateParam("category", undefined)}
             className={clsx(
               "rounded-md px-3 py-2 text-left text-sm",
-              !activeCategory ? "bg-brand-50 font-semibold text-brand-700" : "text-ink-soft hover:bg-surface-alt"
+              !activeCategory ? "bg-brand-50 font-semibold text-brand-700" : "text-ink-soft dark:text-ink-soft-dark hover:bg-surface-alt hover:dark:bg-surface-alt-dark"
             )}
           >
             All Categories
@@ -88,7 +88,7 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
               onClick={() => updateParam("category", c.slug)}
               className={clsx(
                 "rounded-md px-3 py-2 text-left text-sm",
-                activeCategory === c.slug ? "bg-brand-50 font-semibold text-brand-700" : "text-ink-soft hover:bg-surface-alt"
+                activeCategory === c.slug ? "bg-brand-50 font-semibold text-brand-700" : "text-ink-soft dark:text-ink-soft-dark hover:bg-surface-alt hover:dark:bg-surface-alt-dark"
               )}
             >
               {c.icon} {c.name}
@@ -98,13 +98,13 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
       </div>
 
       <div>
-        <h3 className="mb-2 text-sm font-semibold text-ink">Price</h3>
+        <h3 className="mb-2 text-sm font-semibold text-ink dark:text-ink-dark">Price</h3>
         <div className="flex flex-col gap-1">
           <button
             onClick={() => setPriceRange(undefined, undefined)}
             className={clsx(
               "rounded-md px-3 py-2 text-left text-sm",
-              !activeMin && !activeMax ? "bg-brand-50 font-semibold text-brand-700" : "text-ink-soft hover:bg-surface-alt"
+              !activeMin && !activeMax ? "bg-brand-50 font-semibold text-brand-700" : "text-ink-soft dark:text-ink-soft-dark hover:bg-surface-alt hover:dark:bg-surface-alt-dark"
             )}
           >
             Any Price
@@ -117,7 +117,7 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
                 "rounded-md px-3 py-2 text-left text-sm",
                 Number(activeMin) === range.min && (range.max ? Number(activeMax) === range.max : !activeMax)
                   ? "bg-brand-50 font-semibold text-brand-700"
-                  : "text-ink-soft hover:bg-surface-alt"
+                  : "text-ink-soft dark:text-ink-soft-dark hover:bg-surface-alt hover:dark:bg-surface-alt-dark"
               )}
             >
               {range.label}
@@ -132,7 +132,7 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
     <>
       <button
         onClick={() => setMobileOpen(true)}
-        className="mb-4 flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2.5 text-sm font-medium text-ink lg:hidden"
+        className="mb-4 flex items-center gap-2 rounded-full border border-border dark:border-border-dark bg-surface dark:bg-surface-dark px-4 py-2.5 text-sm font-medium text-ink dark:text-ink-dark lg:hidden"
       >
         <Filter width={16} height={16} /> Filters &amp; Sort
       </button>

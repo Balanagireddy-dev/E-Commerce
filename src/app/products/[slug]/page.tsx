@@ -53,7 +53,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
-      <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-1 text-sm text-ink-muted">
+      <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-1 text-sm text-ink-muted dark:text-ink-muted-dark">
         <Link href="/" className="hover:text-brand-600">Home</Link>
         <ChevronRight width={14} height={14} />
         <Link href="/products" className="hover:text-brand-600">Shop</Link>
@@ -66,7 +66,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
       </nav>
 
       <div className="grid gap-8 md:grid-cols-2">
-        <div className="relative aspect-square overflow-hidden rounded-xl bg-surface-alt">
+        <div className="relative aspect-square overflow-hidden rounded-xl bg-surface-alt dark:bg-surface-alt-dark">
           <Image src={image} alt={product.name} fill priority sizes="(max-width: 768px) 100vw, 500px" className="object-cover" />
           <div className="absolute left-3 top-3 flex flex-col gap-1.5">
             {product.discountPriceInPaise ? (
@@ -79,14 +79,14 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
 
         <div className="flex flex-col gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-ink sm:text-3xl">{product.name}</h1>
-            <p className="mt-1 text-sm text-ink-muted">{product.unit}</p>
+            <h1 className="text-2xl font-bold text-ink dark:text-ink-dark sm:text-3xl">{product.name}</h1>
+            <p className="mt-1 text-sm text-ink-muted dark:text-ink-muted-dark">{product.unit}</p>
             {product.rating ? (
               <div className="mt-2 flex items-center gap-1.5 text-sm">
                 <span className="flex items-center gap-1 rounded-md bg-success/10 px-2 py-0.5 font-semibold text-success">
                   {product.rating} <Star width={12} height={12} />
                 </span>
-                <span className="text-ink-muted">({product.reviewCount} reviews)</span>
+                <span className="text-ink-muted dark:text-ink-muted-dark">({product.reviewCount} reviews)</span>
               </div>
             ) : null}
           </div>
@@ -97,7 +97,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
             {product.stock > 0 ? `In stock (${product.stock} available)` : "Out of stock"}
           </p>
 
-          <div className="rounded-lg border border-border bg-surface-alt p-3 text-sm text-ink-soft flex items-center gap-2">
+          <div className="rounded-lg border border-border dark:border-border-dark bg-surface-alt dark:bg-surface-alt-dark p-3 text-sm text-ink-soft dark:text-ink-soft-dark flex items-center gap-2">
             <Truck width={18} height={18} className="shrink-0" />
             Delivered in {shopConfig.estimatedDeliveryMinutes} mins from {shopConfig.shortName}
           </div>
@@ -105,8 +105,8 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           <ProductDetailActions product={product} />
 
           <div>
-            <h2 className="mb-1.5 font-semibold text-ink">Product Description</h2>
-            <p className="text-sm leading-relaxed text-ink-soft">{product.description}</p>
+            <h2 className="mb-1.5 font-semibold text-ink dark:text-ink-dark">Product Description</h2>
+            <p className="text-sm leading-relaxed text-ink-soft dark:text-ink-soft-dark">{product.description}</p>
           </div>
 
           {product.tags && product.tags.length > 0 ? (

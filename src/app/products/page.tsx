@@ -29,10 +29,10 @@ export default async function ProductsPage({
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-      <h1 className="mb-1 text-xl font-bold text-ink sm:text-2xl">
+      <h1 className="mb-1 text-xl font-bold text-ink dark:text-ink-dark sm:text-2xl">
         {categoryFilter ? categoryFilter.name : searchParams.q ? `Results for "${searchParams.q}"` : "All Products"}
       </h1>
-      <p className="mb-4 text-sm text-ink-muted">{products.length} products found</p>
+      <p className="mb-4 text-sm text-ink-muted dark:text-ink-muted-dark">{products.length} products found</p>
 
       <div className="flex flex-col gap-6 lg:flex-row">
         <Suspense fallback={<div className="hidden w-56 lg:block" />}>
